@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que11</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let a = parseInt(prompt("Enter first number :"));
+    let b = parseInt(prompt("Enter second number :"));
+
+    let ch = prompt("Select the  choice + ,-,*,/");
+
+    switch (ch) {
+        case '+':
+            ans = a + b;
+            document.write(`Addition of ${a} + ${b} = ${ans}`);
+            break;
+
+        case '-':
+            ans = a - b;
+            document.write(`Subtraction of ${a} - ${b} = ${ans}`);
+            break;
+
+        case '*':
+            ans = a * b;
+            document.write(`Multiplication of ${a} * ${b} = ${ans}`);
+            break;
+
+        case '/':
+            ans = a / b;
+            document.write(`Division of ${a} / ${b} = ${ans}`);
+            break;
+
+        default:
+            document.write(`Invalid input..`);
+            break;
+    }
+</script>

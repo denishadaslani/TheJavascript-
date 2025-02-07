@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que5</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let unit = parseFloat(prompt("Enter Electricity units:"));
+    let totalbill;
+
+    if (unit <= 50) {
+        totalbill = parseFloat(unit * 0.50);
+    }
+    else if (unit <= 150) {
+        totalbill = parseFloat(25 + ((unit - 50) * 0.75));
+    }
+    else if (unit <= 250) {
+        totalbill = parseFloat(100 + ((unit - 150) * 1.20));
+    }
+    else {
+        totalbill = parseFloat(220 + ((unit - 250) * 1.50));
+    }
+    let total = parseFloat(totalbill + (totalbill * 0.20));
+
+    document.write(`Electricity bill is : ${total.toFixed(2)} `);
+
+
+
+</script>

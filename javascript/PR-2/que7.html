@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que7</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    let physics = parseFloat(prompt("Enter the Physics subject marks :"));
+    let chemistry = parseFloat(prompt("Enter the Chemistry subject marks :"));
+    let biology = parseFloat(prompt("Enter the Biology subject marks :"));
+    let mathematics = parseFloat(prompt("Enter the Mathematics subject marks :"));
+    let computer = parseFloat(prompt("Enter the Computer subject marks :"));
+
+    let total = physics + chemistry + biology + mathematics + computer;
+
+    let per = parseFloat(total / 5);
+    let grade;
+
+    if (per >= 91 && per <= 100) {
+        grade = "A+";
+    } else if (per >= 81 && per <= 90) {
+        grade = "A";
+    } else if (per >= 71 && per <= 80) {
+        grade = "B+";
+    } else if (per >= 61 && per <= 70) {
+        grade = "B";
+    } else if (per >= 51 && per <= 60) {
+        grade = "C+";
+    } else if (per >= 41 && per <= 50) {
+        grade = "C";
+    } else if (per >= 33 && per <= 40) {
+        grade = "D";
+    } else if (per < 33) {
+        grade = "F"
+        alert("You are Fail..");
+    }
+    else {
+        alert("invalid input..");
+    }
+
+    document.write(`percentage is : ${per}% <br> Grade is : ${grade}`);
+</script>

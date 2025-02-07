@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que10</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let num1 = parseInt(prompt("Enter first Number : "));
+    let num2 = parseInt(prompt("Enter second Number : "));
+    let num3 = parseInt(prompt("Enter third Number : "));
+    let num4 = parseInt(prompt("Enter four Number : "));
+    let num5 = parseInt(prompt("Enter fifth Number : "));
+
+
+    if (num1 == num2 && num1 == num3 && num1 == num4 && num1 == num5) {
+        document.write(`all are equal ..`);
+
+    } else if (num1 == num2 || num1 == num3 || num1 == num4 || num1 == num5 || num2 == num3 || num2 == num4 || num2 == num5 || num3 == num4 || num3 == num5 || num4 == num5) {
+
+        document.write(`four number are equal ..`);
+    } else {
+        if (num1 > num2) {
+            if (num1 > num3) {
+                if (num1 > num4) {
+                    if (num1 > num5) {
+                        document.write(`${num1} is max`)
+                    } else {
+                        document.write(`${num5} is max`)
+                    }
+
+                } else {
+                    document.write(`${num4} is max`)
+                }
+
+            } else {
+                document.write(`${num3} is max`)
+            }
+
+        } else if (num2 > num3) {
+
+            if (num2 > num4) {
+                if (num2 > num5) {
+                    document.write(`${num2} is max`)
+                } else {
+                    document.write(`${num5} is max`)
+                }
+            } else {
+                document.write(`${num4} is max`)
+            }
+        } else if (num3 > num4) {
+
+            if (num3 > num5) {
+                document.write(`${num3} is max`)
+            } else {
+                document.write(`${num5} is max`)
+            }
+        } else if (num4 > num5) {
+            document.write(`${num4} is max`)
+        } else {
+            document.write(`${num5} is max`)
+        }
+
+
+    }
+</script>
