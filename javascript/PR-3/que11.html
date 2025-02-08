@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que11</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let n = parseInt(prompt("Enter any Number :"));
+    let isprime = 1;
+    for (let i = 2; i <= n / 2; i++) {
+        if (n % i == 0) {
+            isprime = 0;
+            break;
+        }
+    }
+    if (isprime == 1 && n > 1) {
+        document.write(`${n} is prime Number `);
+    } else {
+        document.write(`${n} is not  prime Number `);
+    }
+</script>
