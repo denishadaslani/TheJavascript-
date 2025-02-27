@@ -17,18 +17,31 @@
 <h1 id='age'></h1>
 <h1 id='course'></h1>
 <h1 id='faculty'></h1>
+<h1 id='address'></h1>
 
 <script type="text/javascript">
 
-    //1st method in object
-    // let arr = {
-    //     grid: 8836,
-    //     name: "denisha",
-    //     age: 20,
-    //     course: "full stack development",
-    //     faculty: 'milan sir'
-    // };
-    // console.log(arr);
+    // 1st method in object
+    let arr = {
+        grid: 8836,
+        name: "denisha",
+        age: 20,
+        course: "full stack development",
+        faculty: 'milan sir'
+    };
+    //delete property
+    delete arr.faculty;
+
+    //add new property
+    arr.address = "abc.soc";
+
+    //update property
+
+    arr.course = "javascript";
+
+    console.log(arr);
+    document.getElementById('name').innerHTML = `Name :- ${arr.name}`;
+    document.getElementById('address').innerHTML = `Address :- ${arr.address}`;
 
     //2nd method in object 
 
@@ -48,18 +61,17 @@
 
     //3rd method in object
 
-    let obj = {};
-    obj.name = "denisha",
-        obj.grid = 8836,
-        obj.age = 20,
+    // let obj = {};
+    // obj.name = "denisha",
+    //     obj.grid = 8836,
+    //     obj.age = 20,
+    // console.log(obj['name']);
+    // document.getElementById('name').innerHTML = `Name :- ${obj.name}`;
+    // document.getElementById('grid').innerHTML = `Grid :- ${obj.grid}`;
+    // document.getElementById('age').innerHTML = `Age:- ${obj.age}`;
 
-        console.log(obj['name']);
-    document.getElementById('name').innerHTML = `Name :- ${obj.name}`;
-    document.getElementById('grid').innerHTML = `Grid :- ${obj.grid}`;
-    document.getElementById('age').innerHTML = `Age:- ${obj.age}`;
-
-    console.log(obj.hasOwnProperty('course'));
-    console.log(obj.hasOwnProperty('name'));
+    // console.log(obj.hasOwnProperty('course'));
+    // console.log(obj.hasOwnProperty('name'));
 
 
 </script>

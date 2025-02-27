@@ -24,30 +24,30 @@
 
     document.write(`<h2>After swapping:- </h2><br>`);
 
-    // document.write(`<h2> Take Something Return Nothing </h2><br>`);
+    document.write(`<h2> Take Something Return Nothing </h2><br>`);
 
-    // function TSRN(a, b) {
-    //     a = a + b;
-    //     b = a - b;
-    //     a = a - b;
-    //     document.write(`Num1:${a}<br>`);
-    //     document.write(`Num2:${b} <br>`);
-    // }
-    // TSRN(num1, num2);
+    function TSRN(a, b) {
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        document.write(`Num1:${a}<br>`);
+        document.write(`Num2:${b} <br>`);
+    }
+    TSRN(num1, num2);
 
 
-    // document.write(`<h2> Take Nothing Return Somthing </h2><br>`);
+    document.write(`<h2> Take Nothing Return Somthing </h2><br>`);
 
-    // function TNRS() {
-    //     num1 = num1 + num2
-    //     num2 = num1 - num2
-    //     num1 = num1 - num2
-    //     return [num1, num2]
-    // }
-    // let result = TNRS();
+    function TNRS() {
+        num1 = num1 + num2
+        num2 = num1 - num2
+        num1 = num1 - num2
+        return [num1, num2]
+    }
+    let result = TNRS();
 
-    // document.write(`Num1:${num1}<br>`);
-    // document.write(`Num2:${num2} <br>`);
+    document.write(`Num1:${num1}<br>`);
+    document.write(`Num2:${num2} <br>`);
 
 
 
@@ -60,7 +60,7 @@
 
         return [num1, num2];
     }
-    let result = TSRS(num1, num2);
+    TSRS();
 
     document.write(`Num1:${num1}<br>`);
     document.write(`Num2:${num2} <br>`);
