@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swapping of two variables.</title>
+</head>
+
+<body>
+    <h1 align="center">swapping of two variables.</h1>
+</body>
+
+</html>
+<script type="text/javascript">
+
+    let num1 = parseInt(prompt("Enter First Number:"));
+    let num2 = parseInt(prompt("Enter second Number:"));
+
+    document.write(`<h2>Before swapping:- </h2><br>`);
+
+    document.write(`Num1:${num1}<br>`);
+    document.write(`Num2:${num2} <br>`);
+
+    document.write(`<h2>After swapping:- </h2><br>`);
+
+    // document.write(`<h2> Take Something Return Nothing </h2><br>`);
+
+    // function TSRN(a, b) {
+    //     a = a + b;
+    //     b = a - b;
+    //     a = a - b;
+    //     document.write(`Num1:${a}<br>`);
+    //     document.write(`Num2:${b} <br>`);
+    // }
+    // TSRN(num1, num2);
+
+
+    // document.write(`<h2> Take Nothing Return Somthing </h2><br>`);
+
+    // function TNRS() {
+    //     num1 = num1 + num2
+    //     num2 = num1 - num2
+    //     num1 = num1 - num2
+    //     return [num1, num2]
+    // }
+    // let result = TNRS();
+
+    // document.write(`Num1:${num1}<br>`);
+    // document.write(`Num2:${num2} <br>`);
+
+
+
+    document.write(`<h2> Take Somthing Return Somthing </h2><br>`);
+
+    function TSRS(num1, num2) {
+        num1 = num1 + num2;
+        num2 = num1 - num2;
+        num1 = num1 - num2;
+
+        return [num1, num2];
+    }
+    let result = TSRS(num1, num2);
+
+    document.write(`Num1:${num1}<br>`);
+    document.write(`Num2:${num2} <br>`);
+
+    // document.write(`<h2> Take Nothing Return  Nothing </h2><br>`);
+
+    // function TNRN() {
+    //     num1 = num1 + num2;
+    //     num2 = num1 - num2;
+    //     num1 = num1 - num2;
+
+
+    // }
+    // TNRN();
+
+    // document.write(`Num1:${num1}<br>`);
+    // document.write(`Num2:${num2} <br>`);
+
+
+
+
+</script>

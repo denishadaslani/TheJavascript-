@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check number positive and negetive</title>
+</head>
+
+<body>
+    <h1 align="center"></h1>
+</body>
+
+</html>
+<script>
+    let num = parseInt(prompt("Enter any Number"));
+    function check() {
+        if (num > 0) {
+            document.write(`${num} is positive number `);
+        }
+        else if (num < 0) {
+            document.write(`${num} is Negative number `);
+        }
+        else {
+            document.write(`${num} is zero number `);
+        }
+    }
+    check();
+</script>

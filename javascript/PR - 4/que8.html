@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> basic calculator </title>
+</head>
+
+<body>
+    <h1 align="center"> basic calculator </h1>
+</body>
+
+</html>
+<script type="text/javascript">
+
+
+    let a = parseInt(prompt("Enter first  Number:"));
+    let b = parseInt(prompt("Enter second  Number:"));
+
+    let ch = prompt("Select your choice + ,-,*,/");
+
+    function calculator() {
+        switch (ch) {
+            case '+':
+                document.write(`Addition of ${a} + ${b} =  ${a + b}`);
+                break;
+            case '-':
+                document.write(`Subtraction of ${a} - ${b} =  ${a - b}`);
+                break;
+            case '*':
+                document.write(`Multiplication of ${a} * ${b} =  ${a * b}`);
+                break;
+            case '/':
+                document.write(`Division of ${a} / ${b} =  ${a / b}`);
+                break;
+            default:
+                document.write("Invalid input...");
+                break;
+        }
+    }
+    calculator();
+
+</script>

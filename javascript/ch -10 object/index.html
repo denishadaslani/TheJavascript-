@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array object</title>
+</head>
+
+<body>
+    <h1 align="center">Array object</h1>
+</body>
+
+</html>
+<h1 id='name'></h1>
+<h1 id='grid'></h1>
+<h1 id='age'></h1>
+<h1 id='course'></h1>
+<h1 id='faculty'></h1>
+
+<script type="text/javascript">
+
+    //1st method in object
+    // let arr = {
+    //     grid: 8836,
+    //     name: "denisha",
+    //     age: 20,
+    //     course: "full stack development",
+    //     faculty: 'milan sir'
+    // };
+    // console.log(arr);
+
+    //2nd method in object 
+
+    // let obj = new Object();
+    // obj.grid = 8836,
+    //     obj.name = "denisha",
+    //     obj.age = 20,
+    //     obj.course = "full stack development",
+    //     obj.faculty = 'milan sir'
+
+    // console.log(obj);
+    // document.getElementById('name').innerHTML = `Name :- ${obj.name}`;
+    // document.getElementById('grid').innerHTML = `Grid :- ${obj.grid}`;
+    // document.getElementById('age').innerHTML = `Age :- ${obj.age}`;
+    // document.getElementById('course').innerHTML = `Course :- ${obj.course}`;
+    // document.getElementById('faculty').innerHTML = `Faculty :- ${obj.faculty}`;
+
+    //3rd method in object
+
+    let obj = {};
+    obj.name = "denisha",
+        obj.grid = 8836,
+        obj.age = 20,
+
+        console.log(obj['name']);
+    document.getElementById('name').innerHTML = `Name :- ${obj.name}`;
+    document.getElementById('grid').innerHTML = `Grid :- ${obj.grid}`;
+    document.getElementById('age').innerHTML = `Age:- ${obj.age}`;
+
+    console.log(obj.hasOwnProperty('course'));
+    console.log(obj.hasOwnProperty('name'));
+
+
+</script>

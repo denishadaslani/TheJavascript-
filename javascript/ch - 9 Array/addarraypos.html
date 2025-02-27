@@ -1,0 +1,31 @@
+<script>
+
+    let arr = [];
+
+    for (i = 0; i < 10; i++) {
+        arr[i] = i;
+    }
+    console.log(arr);
+
+    let Arr = [100, 200, 300, 500]
+    let pos = 3;
+    let value = 400;
+    let n = Arr.length;
+
+    for (let i = pos; i < n; i++) {
+        Arr[i + 1] = Arr[i]
+    }
+    Arr[pos] = value;
+    n++;
+    console.log(Arr);
+    document.write(Arr);
+
+    for (let i = n; i > pos; i--) {
+        Arr[i] = Arr[i - 1];
+    }
+    Arr[pos] = value;
+    n--;
+    document.write(Arr);
+    console.log(Arr);
+
+</script>
