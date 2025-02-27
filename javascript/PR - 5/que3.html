@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> minummum number</title>
+</head>
+
+<body>
+    <h1 align="center"> minummum number</h1>
+</body>
+
+</html>
+<script type="text/javascript">
+
+    let n = parseInt(prompt("Enter size of array:"));
+
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Enter element ${i}:`));
+    }
+
+    document.write(`Input Of Array Element :- <br>`);
+
+    for (let i = 0; i < n; i++) {
+        document.write(arr[i] + ",");
+    }
+
+    let min = arr[0];
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    document.write(`<br>Minimum number of  array : ${min}`);
+
+</script>

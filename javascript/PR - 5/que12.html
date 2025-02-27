@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove duplicate element in array</title>
+</head>
+
+<body>
+    <h1 align="center">remove duplicate element in array</h1>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    let n = parseInt(prompt("Enter size of array:"));
+
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Enter element ${i}:`));
+    }
+
+    document.write(`Input Of Array Element :- <br>`);
+
+    for (let i = 0; i < n; i++) {
+        document.write(arr[i] + " ");
+    }
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                arr[i] = '0';
+            }
+        }
+    }
+
+    document.write(`<br> remove duplicate element in array :- <br>`);
+    for (let i = 0; i < n; i++) {
+        if (arr[i] != '0') {
+            document.write(arr[i] + " ");
+        }
+    }
+</script>

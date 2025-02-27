@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of object</title>
+</head>
+
+<body>
+    <h1 align="center">Array of object</h1>
+    <table border="2" cellspacing="2" cellpadding="20">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="user">
+
+        </tbody>
+
+    </table>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    let obj = [
+        {
+            id: 1,
+            name: "denisha",
+            age: 20,
+
+
+        },
+        {
+            id: 2,
+            name: "abc",
+            age: 20,
+
+        },
+        {
+            id: 3,
+            name: "abcd",
+            age: 30,
+
+        }
+    ]
+
+    // console.log(obj);
+    // for (i = 0; i < obj.length; i++) {
+    //     console.log(`id:-${obj[i].id}  name:-${obj[i].name}  age:-${obj[i].age}`);
+    // }
+
+    obj.map(val => {
+        console.log(`id:-${val.id} name:- ${val.name}`);
+        // document.write(` id:-${val.id} name:- ${val.name} age:-${val.age}`);
+    })
+
+    let tbl = " ";
+    obj.map((val => {
+        tbl += `
+                <tr>
+                <td>${val.id}</td>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                </tr>   
+              `
+    }))
+
+    document.getElementById('user').innerHTML = tbl;
+
+</script>

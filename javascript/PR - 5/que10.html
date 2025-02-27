@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array ascending order sort.</title>
+</head>
+
+<body>
+    <h1 align="center">array ascending order sort.</h1>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    let n = parseInt(prompt("Enter size of array:"));
+
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Enter element ${i}:`));
+    }
+
+    document.write(`Input Of Array Element :- <br>`);
+
+    for (let i = 0; i < n; i++) {
+        document.write(arr[i] + " ");
+    }
+
+    document.write(`<br> ascending order :- <br>`);
+
+    arr.sort();
+
+    for (let i = 0; i < n; i++) {
+        document.write(arr[i] + " ");
+    }
+</script>
