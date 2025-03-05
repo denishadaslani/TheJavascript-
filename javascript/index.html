@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+
+<body>
+    <h1 align="center">Student Record</h1>
+
+    <div class="data">
+        <table align="center">
+            <thead>
+                <tr>
+                    <td>Roll no :</td>
+                    <td><input type="text" id="rollno"></td>
+                </tr>
+                <tr>
+                    <td>Name : </td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>course :</td>
+                    <td>
+                        <select name="" id="course">
+                            <option value="0">--select course--</option>
+                            <option value="bca">bca</option>
+                            <option value="bba">bba</option>
+                            <option value="bcom">bcom</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td>password :</td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="submit" onclick="adduser()">submit</button></td>
+                </tr>
+            </thead>
+            <tbody id="user">
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <table border="1" cellpadding="10px">
+        <thead>
+
+            <tr>
+                <th>Rollno</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Password</th>
+            </tr>
+
+        </thead>
+        <tbody id="save">
+
+
+        </tbody>
+    </table>
+
+</body>
+
+
+</html>
+<script>
+    let user = [];
+
+
+
+    // console.log(user);
+
+
+    let viewuser = () => {
+        tbl = ' ';
+        user.map((val) => {
+            tbl += `
+
+                <tr>
+                    <td>${val.rollno}</td>
+                    <td>${val.name}</td>
+                    <td>${val.email}</td>
+                    <td>${val.course}</td>
+                    <td>${val.password}</td>
+                    
+                </tr>
+            `
+        })
+        document.getElementById('save').innerHTML = tbl;
+
+        // viewuser();
+
+    }
+
+
+
+    let adduser = () => {
+        let rollno = document.getElementById('rollno').value;
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let course = document.getElementById('course').value;
+        let password = document.getElementById('password').value;
+
+
+        let obj = {
+            rollno: rollno,
+            name: name,
+            email: email,
+            course: course,
+            password: password
+        }
+
+        user.push(obj);
+        alert("ok");
+        document.getElementById('rollno').value = "";
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('course').value = "";
+        document.getElementById('password').value = "";
+        console.log(user);
+        viewuser();
+
+    }
+</script>

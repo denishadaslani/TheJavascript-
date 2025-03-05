@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D array</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+
+    let arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+    let row = 3, col = 3;
+
+    document.write("<br>Boundary Element:-<br>");
+    for (let i = 0; i < row; i++)
+        for (let j = 0; j < col; j++) {
+            if (i == 0 || j == 0 || i == row - 1 || j == col - 1) {
+                document.write(`${arr[i][j] + " "}`);
+
+                // console.log(`${arr[i][j] + " "}`);
+            }
+            document.write(`<br>`);
+        }
+    document.write("<br>cross Element:-<br>");
+
+    for (let i = 0; i < row; i++)
+        for (let j = 0; j < col; j++) {
+            if (i == j || i + j == row - 1) {
+                document.write(`${arr[i][j] + " "}`);
+                // console.log(`${arr[i][j] + " "}`);
+            }
+            document.write(`<br>`);
+        }
+
+    document.write("<br>Anti-Diagonal Element:-<br>");
+
+    for (let i = 0; i < row; i++)
+        for (let j = 0; j < col; j++) {
+            if (i + j == row - 1) {
+                document.write(`${arr[i][j] + " "}`);
+                // console.log(`${arr[i][j] + " "}`);
+            }
+            document.write(`<br>`);
+        }
+
+    document.write("<br>Diagonal Element:-<br>");
+    for (let i = 0; i < row; i++)
+        for (let j = 0; j < col; j++) {
+            if (i == j) {
+                document.write(`${arr[i][j] + " "}`);
+                // console.log(`${arr[i][j] + " "}`);
+            }
+            document.write(`<br>`);
+        }
+</script>
+
+</html>

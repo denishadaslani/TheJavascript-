@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div onmouseover="data()" style="height: 100px;width :
+100px;background-color:green ;"></div>
+    <h1 id="ans"></h1>
+    <script type="text/javascript">
+        let cnt = 0;
+        function data() {
+            cnt++;
+            document.getElementById('ans').innerHTML = cnt;
+        }
+        data();
+    </script> -->
+
+
+    <div onmouseover="data()">
+        <div class="box" id="box" style="height: 100px;width :100px;background-color:palevioletred ;">
+
+        </div>
+
+    </div>
+    <!-- <h2 id="ans"></h2> -->
+
+    <script>
+
+        // let count = 0;
+        // let data = () => {
+        //     count++;
+
+        //     document.getElementById('ans').innerHTML = count;
+        // }
+
+        let data = () => {
+            document.getElementById('box').style.height = '400px';
+            document.getElementById('box').style.width = '400px';
+            document.getElementById('box').style.backgroundColor = 'yellow';
+        }
+
+    </script>
+</body>
+
+</html>

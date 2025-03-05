@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add user view user</title>
+</head>
+
+<body>
+    <h1 align="center"> Add user view user </h1>
+
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <td>Name:</td><br>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>phone:</td><br>
+                <td><input type="number" id="phone"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button id="Submit">Submit</button></td>
+
+            </tr>
+
+        </thead>
+        <tbody id="user">
+
+        </tbody>
+    </table>
+    <br><br>
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Phone</td>
+            </tr>
+        </thead>
+        <tbody id="userrecord">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        let button = document.getElementById('Submit');
+        button.addEventListener("click", function () {
+
+
+
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+
+            let obj = {
+                grid: Math.floor(Math.random() * 1000000),
+                name: name,
+                phone: phone
+            }
+            user.push(obj);
+            alert("User create successfully ");
+            document.getElementById('name').value = "";
+            document.getElementById('phone').value = "";
+            viewUser();
+
+
+        })
+
+
+
+        //view user 
+        let user = [];
+        let viewUser = () => {
+            tbl = ' '
+            user.forEach((val) => {
+                tbl += `
+                        <tr>
+                            <td>${val.grid}</td>
+                            <td>${val.name}</td>
+                            <td>${val.phone}</td>
+                        </tr>
+
+                `
+            })
+            document.getElementById('userrecord').innerHTML = tbl;
+
+        }
+        viewUser();
+
+
+
+        //add user
+
+        // let adduser = () => {
+
+        //     let name = document.getElementById('name').value;
+        //     let phone = document.getElementById('phone').value;
+
+        //     let obj = {
+        //         grid: Math.floor(Math.random() * 1000000),
+        //         name: name,
+        //         phone: phone
+        //     }
+        //     user.push(obj);
+        //     alert("User create successfully ");
+        //     document.getElementById('name').value = "";
+        //     document.getElementById('phone').value = "";
+        //     viewUser();
+        // }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

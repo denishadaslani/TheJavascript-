@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iiFE Function</title>
+</head>
+
+<body>
+    <h1 align="center">iiFE Function</h1>
+</body>
+
+</html>
+<script type="text/javascript">
+
+    let a = parseInt(prompt("Enter first Number"));
+    let b = parseInt(prompt("Enter second Number"));
+
+    ((a, b) => {
+        document.write(`sum :-  ${a} + ${b} = ${a + b} <br> <br>`);
+        document.write(`sub :- ${a} - ${b} = ${a - b} <br> <br>`);
+        document.write(`mul :- ${a} * ${b} = ${a * b} <br> <br>`);
+        document.write(`div :-${a} / ${b} = ${a / b} <br> <br>`);
+
+        if (a > b) {
+            document.write(`${a} is greater number`);
+        }
+        else {
+            document.write(`${b} is greater number`);
+        }
+    })(a, b);
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <div onmousemove="data()" style="height: 100px;width :
+100px;background-color:green ;"></div>
+    <h1 id="ans"></h1>
+    <script type="text/javascript">
+        let cnt = 0;
+        function data() {
+            cnt++;
+            document.getElementById('ans').innerHTML = cnt;
+        }
+        data(); 
+        
+    </script>-->
+
+    <div onmousemove="data()">
+        <div class="box" id="box" style="height: 100px;width :100px;background-color:palevioletred ;"></div>
+
+        <br>
+        <br>
+        <br>
+        <div class="box1" id="box1"
+            style=" visibility: hidden; height: 100px;width :100px;background-color:powderblue ;"></div>
+    </div>
+
+    <script>
+        let count = 0;
+        let data = () => {
+
+            count++;
+            document.getElementById('box').innerHTML = cnt;
+            document.getElementById('box1').style.visibility = 'visible';
+
+
+        }
+    </script>
+</body>
+
+</html>

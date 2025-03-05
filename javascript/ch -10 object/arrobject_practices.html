@@ -8,7 +8,18 @@
 </head>
 
 <body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="user">
 
+        </tbody>
+    </table>
 </body>
 
 </html>
@@ -44,9 +55,38 @@
 
     // let result = obj.filter((item) => { return item.age > 25 });
 
-    let result = obj.filter((item) => {
-        return item.age > 25
-    });
+    // let result = obj.filter((val) => {
+    //     return item.age > 25
+    // });
 
+    // console.log(result);
+
+    // let result = " "
+    // obj.map((val) => {
+
+    //     result += `<tr>
+    //         <td>${val.id}</td>
+    //         <td>${val.name}</td>
+    //         <td>${val.age}</td>
+    //     </tr>`
+
+    // });
+
+    // document.getElementById('user').innerHTML = result;
+
+    function add(id, name, age) {
+
+        let add = {
+            id: 1,
+            name: "abc",
+            age: 20
+        };
+
+        return add;
+    }
+    let result = add();
+
+    // document.write(`${result.id} ${result.name} ${result.age}`);
     console.log(result);
+
 </script>
