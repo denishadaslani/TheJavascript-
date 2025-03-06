@@ -61,9 +61,11 @@
                     <option value="junior">junior</option>
                     <option value="tl">tl</option>
                     <option value="manager">manager</option>
-
                 </select>
+                <button onclick="reset()">Reset</button>
             </div>
+
+
         </div>
     </section>
 
@@ -81,7 +83,10 @@
                             <th scope="col">Salary</th>
                             <th scope="col">Designation</th>
                             <th scope="col">Department</th>
+
+
                         </tr>
+
                     </thead>
                     <tbody id="user">
 
@@ -130,6 +135,13 @@
         { id: 29, name: "laxman", email: "laxman@gmail.com", phone: "566677", city: "vadodara", salary: 29000, degi: "manager", dep: "bde" },
         { id: 30, name: "pradeep", email: "pradeep@gmail.com", phone: "456567", city: "vapi", salary: 30000, degi: "tl", dep: "programming" },
     ];
+
+    //all salary
+
+    let sum = 0;
+    records.map((val) => {
+        sum += val.salary
+    })
 
     let tbl = ' ';
     records.map((val) => {
@@ -282,6 +294,22 @@
         document.getElementById('Total').innerHTML = `Total salary :- ${sum}`;
         document.getElementById('user').innerHTML = tbl;
     }
+
+    //Reset
+
+    let reset = () => {
+
+        alert("reset successfully");
+        document.getElementById('city').value = '0';
+        document.getElementById('salary').value = '0';
+        document.getElementById('dep').value = '0';
+        document.getElementById('degi').value = '0';
+        document.getElementById('Total').innerHTML = `Total salary :- ${sum}`;
+        document.getElementById('user').innerHTML = tbl;
+
+    }
+
+
 
 
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array of object practies</title>
+</head>
+
+<body>
+
+    <table border="2" cellspacing="2" cellpadding="20">
+        <thead>
+            <tr>
+                <th>empid</th>
+                <th>empname</th>
+                <th>empdepatment</th>
+            </tr>
+        </thead>
+        <tbody id="userRecord">
+
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+
+        let object = [
+            {
+                empid: 1,
+                empname: "denisha",
+                empdepatment: "IT",
+            },
+            {
+                empid: 2,
+                empname: "dharmik",
+                empdepatment: "owner",
+            }
+        ]
+
+        let table = "";
+        object.forEach((value => {
+
+            table +=
+                `
+                <tr>
+
+                    <td>${value.empid}</td>
+                    <td>${value.empname}</td>
+                    <td>${value.empdepatment}</td>
+
+                
+                </tr>
+            `
+
+        }));
+
+
+        document.getElementById('userRecord').innerHTML = table;
+
+    </script>
+</body>
+
+</html>

@@ -37,16 +37,35 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td>gender:</td>
+                    <td>
+                        <input type="radio" name="gender" id="gender" value="male">male
+                        <input type="radio" name="gender" id="gender" value="Female">Female
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>Hobbies</td>
+                    <td>
+                        <input type="checkbox" name="Hobbies" value="reading" id="Hobbies">reading
+                        <input type="checkbox" name="Hobbies" value="dancing" id="Hobbies">dancing
+                        <input type="checkbox" name="Hobbies" value="singing" id="Hobbies">singing
+
+                    </td>
+                </tr>
 
                 <tr>
                     <td>password :</td>
                     <td><input type="password" id="password"></td>
                 </tr>
+
                 <tr>
                     <td></td>
                     <td><button id="submit" onclick="adduser()">submit</button></td>
                 </tr>
+
+
             </thead>
             <tbody id="user">
 
@@ -55,8 +74,10 @@
         </table>
     </div>
 
+    <br>
+    <br>
 
-    <table border="1" cellpadding="10px">
+    <table border="1" align="center" cellpadding="10px">
         <thead>
 
             <tr>
@@ -65,6 +86,9 @@
                 <th>Email</th>
                 <th>Course</th>
                 <th>Password</th>
+                <th>Gender</th>
+                <th>Hobbies</th>
+
             </tr>
 
         </thead>
@@ -80,15 +104,9 @@
 </html>
 <script>
     let user = [];
-
-
-
-    // console.log(user);
-
-
     let viewuser = () => {
         tbl = ' ';
-        user.map((val) => {
+        user.forEach((val) => {
             tbl += `
 
                 <tr>
@@ -97,17 +115,14 @@
                     <td>${val.email}</td>
                     <td>${val.course}</td>
                     <td>${val.password}</td>
-                    
+                    <td>${val.gender}</td>
+                    <td>${val.Hobbies}</td>
+
                 </tr>
             `
         })
         document.getElementById('save').innerHTML = tbl;
-
-        // viewuser();
-
     }
-
-
 
     let adduser = () => {
         let rollno = document.getElementById('rollno').value;
@@ -115,6 +130,18 @@
         let email = document.getElementById('email').value;
         let course = document.getElementById('course').value;
         let password = document.getElementById('password').value;
+        let gender = document.querySelector('input[name="gender"]:checked').value;
+        let Hobbies = document.getElementsByName('Hobbies');
+
+        let checkbox = [];
+
+        Hobbies.forEach((val => {
+            if (val.checked) {
+                checkbox.push(val.value);
+            }
+        }))
+
+        console.log(checkbox);
 
 
         let obj = {
@@ -122,7 +149,9 @@
             name: name,
             email: email,
             course: course,
-            password: password
+            password: password,
+            gender: gender,
+            Hobbies: checkbox
         }
 
         user.push(obj);
@@ -132,6 +161,16 @@
         document.getElementById('email').value = "";
         document.getElementById('course').value = "";
         document.getElementById('password').value = "";
+        document.querySelector('input[name="gender"]:checked').checked = false;
+
+
+
+        Hobbies.forEach((val) => {
+            if (val.checked) {
+                val.checked = false;
+            }
+        })
+
         console.log(user);
         viewuser();
 
