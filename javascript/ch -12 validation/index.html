@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+
+<body>
+
+    <h1 align="center">form validation</h1>
+    <table align="center">
+        <thead>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name"></td>
+                <td><span id="nameerror"></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" id="email"></td>
+                <td><span id="emailerror"></span></td>
+
+            </tr>
+            <!-- <tr>
+                <td>phone:</td>
+                <td><input type="number" id="phone"></td>
+                <td><span id="phoneerror"></span></td>
+
+            </tr> -->
+            <tr>
+                <td>password:</td>
+                <td><input type="password" id="password"></td>
+                <td><span id="passworderror"></span></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" value="male">male
+                    <input type="radio" value="female">female
+                </td>
+                <td><span id="gendererror"></span></td>
+
+            </tr>
+
+            <tr>
+                <td>
+                <td><button onclick="formvalidation()">Submit</button></td>
+                </td>
+            </tr>
+        </thead>
+
+    </table>
+</body>
+
+<script type="text/javascript">
+
+
+    function validatePassword() {
+        let passworderror = document.getElementById('passworderror');
+        var p = document.getElementById('password').value;
+        if (p.length < 8) {
+            passworderror.innerText = "Your password must be at least 8 characters"
+            passworderror.style.color = "red";
+        }
+        if (p.search(/[a-z]/i) < 0) {
+            passworderror.innerText = "Your password must contain at least one letter."
+            passworderror.style.color = "red";
+        }
+        if (p.search(/[0-9]/) < 0) {
+            passworderror.innerText = "Your password must contain at least one digit."
+            passworderror.style.color = "red";
+        }
+    }
+
+    const formvalidation = () => {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        // let phone = document.getElementById('phone').value;
+        // let radio = document.getElementById('radio').value;
+
+
+        if (!name) {
+            let nameerror = document.getElementById('nameerror');
+            nameerror.innerText = "name is requerd";
+            nameerror.style.color = "red";
+        }
+       
+        // if (!phone) {
+        //     let phoneerror = document.getElementById('phoneerror');
+        //     phoneerror.innerText = "phone number is requerd";
+        //     phoneerror.style.color = "red";
+        // }
+
+
+        if (!email) {
+            let emailerror = document.getElementById('emailerror')
+            emailerror.innerText = "email is requerd";
+            emailerror.style.color = "red";
+        }
+        else {
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!pattern.test(email)) {
+                let emailerror = document.getElementById('emailerror');
+                emailerror.innerText = "Email is not valid"
+                emailerror.style.color = "red";
+            }
+        }
+        // if (!radio) {
+        //     let gendererror = document.getElementById('gendererror');
+        //     gendererror.innerText = "gender is requerd";
+        //     gendererror.style.color = "red";
+        // }
+
+
+        validatePassword(password);
+    }
+
+
+
+
+</script>
+
+</html>

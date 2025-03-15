@@ -1,0 +1,43 @@
+<script>
+
+    class Details {
+        constructor() {
+            this.id;
+            this.name;
+            this.roll;
+            this.college = "sutex";
+        }
+    }
+    class Teachers extends Details {
+        setTechers() {
+            this.id = parseInt(prompt("Enter techers id:"));
+            this.name = prompt("Enter techers name:");
+            this.roll = prompt("Enter techers roll:");
+        }
+        getTeachers() {
+            document.write(`Techeres id:${this.id}<br>`);
+            document.write(`Techeres name:${this.name}<br>`);
+            document.write(`Techeres roll:${this.roll}<br>`);
+            document.write(`Techeres college:${this.college}<br>`);
+        }
+    }
+    class Student extends Teachers {
+        setStudent() {
+            this.id = parseInt(prompt("Enter student id:"));
+            this.name = prompt("Enter student name:");
+
+        }
+        getStudent() {
+            document.write(`student id:${this.id}<br>`);
+            document.write(`student name:${this.name}<br>`);
+            document.write(`student college:${this.college}<br>`);
+        }
+    }
+
+    let s1 = new Student();
+    s1.setTechers();
+    s1.getTeachers();
+    s1.setStudent();
+    s1.getStudent();
+
+</script>

@@ -1,0 +1,36 @@
+<script>
+
+    class phone {
+        constructor(color, company) {
+
+            this.color = color;
+            this.company = company;
+
+        }
+        phoneDetails() {
+
+            document.write(`<h2> phone color is ${this.color} and company is ${this.company}</h2>`);
+        }
+
+
+    }
+
+    let p = new phone("black", "apple");
+    let p2 = new phone("pink", "samsung");
+    let p3 = new phone("yellow", "oneplus");
+
+    let data = [p, p2, p3];
+    
+    // console.log(data);
+    // data.map((val) => {
+    //     console.log(val.phoneDetails());
+    // })
+    // for (i = 0; i < data.length; i++) {
+    //     data[i].phoneDetails();
+    // }
+    // p.phoneDetails();
+
+
+
+
+</script>

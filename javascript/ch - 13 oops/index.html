@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+</head>
+
+<body>
+    <h1 align="center">Object and Class</h1>
+</body>
+
+<script type="text/javascript">
+    class Arithmetic {
+        add() {
+            let a = 10, b = 20;
+            document.write(`${a} + ${b} = ${a + b}` + "<br>");
+        }
+        sub() {
+            let a = 20, b = 30;
+            document.write(`${a} - ${b} = ${a - b}` + "<br>");
+        }
+        mult() {
+            let a = 10, b = 20;
+            document.write(`${a} * ${b} = ${a * b}` + "<br>");
+        }
+        div() {
+            let a = 10, b = 20;
+            document.write(`${a} / ${b} = ${a / b}` + "<br>");
+        }
+        module() {
+            let a = 10, b = 20;
+            document.write(`${a} % ${b} = ${a % b}`);
+        }
+    }
+
+    let obj = new Arithmetic();
+    obj.add();
+    obj.sub();
+    obj.mult();
+    obj.div();
+    obj.module();
+
+</script>
+
+</html>

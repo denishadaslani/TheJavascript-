@@ -1,0 +1,49 @@
+<script>
+    class BankAccount {
+        constructor(number, balance,) {
+            this.number = number;
+            this.balance = balance;
+        }
+
+        user() {
+            this.number = parseInt(prompt("Enter Account Number:"));
+            this.balance = parseInt(prompt("Enter Account Balance:"));
+            document.write(`Account Number:${this.number}<br>`);
+            document.write(`Opening Balance:${this.balance}<br>`);
+
+        }
+
+        deposit() {
+            let amount = parseInt(prompt("Enter amount to deposit:"));
+            this.balance += amount;
+            document.write(`deposited:${amount}<br>`);
+        }
+
+        withdraw() {
+            let amount = parseInt(prompt("Enter amount to withdraw:"));
+            this.balance -= amount;
+            document.write(`withdraw:${amount}<br>`);
+
+            let amt = parseInt(prompt("Enter amount you want to withdraw:"));
+            document.write(`want to withdraw:${amt}<br>`);
+
+            if (amt > this.balance) {
+                document.write("Insufficient balance <br>");
+            }
+            else {
+                this.balance -= amt;
+            }
+        }
+
+        totalBalance() {
+            document.write(`Account balance:${this.balance} <br>`);
+        }
+
+    }
+    let a1 = new BankAccount();
+    a1.user();
+    a1.deposit();
+    a1.withdraw();
+    a1.totalBalance();
+
+</script>

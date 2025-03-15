@@ -11,15 +11,11 @@
     <h1>Print Pattern 10,1,5,9,2,4,8,3,3 using for loop</h1>
     <script>
 
-        for (let i = 5; i >= 3; i--) {
-            for (let j = 1; j <= 3; j++) {
-                for (let k = 10; k >= 8; k--) {
-                    document.write(k + " ");
-                }
-                document.write("<br>");
-            }
-        }
+        let a = 10, b = 1, c = 5;
 
+        for (let i = 1; i <= 3; i++) {
+            document.write(`${a--},${b++},${c--},`);
+        }
     </script>
 </body>
 

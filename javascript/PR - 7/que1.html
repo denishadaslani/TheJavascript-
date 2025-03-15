@@ -1,0 +1,23 @@
+<script>
+
+    class Person {
+        constructor(name, age, country) {
+            this.name = name;
+            this.age = age;
+            this.country = country;
+        }
+        display() {
+            document.write(`Name:- ${this.name}<br>Age:- ${this.age}<br>Country:- ${this.country}<br>`);
+        }
+    }
+
+    let p1 = new Person("xyz", 25, "USA");
+    let p2 = new Person("pqr", 30, "IND");
+
+    let data = [p1, p2];
+
+    data.map((val) => {
+        val.display()
+    })
+
+</script>
