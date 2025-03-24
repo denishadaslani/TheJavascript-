@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* .p2 {
+            color: palevioletred !important;
+        } */
+    </style>
+
+    <div id="root"></div>
+
+    <script>
+
+        let root = document.getElementById('root');
+        let p = document.createElement('p');
+        p.innerHTML = "denisha";
+        p.style.color = "green";
+        p.setAttribute("id", "p1");
+        p.setAttribute("class", "p2");
+
+        p.addEventListener("click", () => {
+            p.innerHTML = "daslani";
+            p.style.color = "palevioletred";
+            p.style.transform = "translate(300px)";
+            p.style.transition = "2s";
+
+
+        })
+
+        setTimeout(() => {
+
+            p.style.transform = "translate(0px)";
+            p.style.transition = "5s";
+            p.style.width = "200px";
+            p.style.height = "200px";
+            p.style.backgroundColor = "pink";
+
+        }, 4000);
+        root.appendChild(p);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

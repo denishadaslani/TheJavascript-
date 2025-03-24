@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offcanvace</title>
+    <style>
+        h3 {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+
+    <script>
+        let root = document.getElementById('root');
+        let button = document.createElement('button');
+        let box = document.createElement('div');
+        box.setAttribute("id", "box");
+        box.setAttribute("class", "box");
+        box.style.height = "100%";
+        box.style.width = "200px";
+        box.style.display = "none";
+
+        box.innerHTML = "<h3>close</h3>";
+
+
+
+
+
+
+
+
+        box.style.backgroundColor = "powderblue";
+        button.innerHTML = "click me";
+        button.style.position = "absolute";
+
+
+        button.style.top = "0%";
+        button.style.right = "0%";
+
+        box.style.position = "absolute";
+        box.style.top = "0%";
+        box.style.left = "0%";
+
+
+
+
+        box.addEventListener("click", () => {
+            box.style.display = "none";
+        })
+
+
+
+        // root.style.display = "flex";
+        // root.style.justifyContent = "flex-end";
+
+
+        button.addEventListener("click", () => {
+
+            if (box.style.display == "none") {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+
+        })
+
+
+
+
+        root.appendChild(button);
+        root.appendChild(box);
+    </script>
+</body>
+
+</html>

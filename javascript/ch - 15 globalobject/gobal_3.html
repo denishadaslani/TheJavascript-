@@ -1,0 +1,39 @@
+<script>
+
+    let i = 0;
+    let panipuri = () => {
+        if (i <= 10) {
+            document.write(`panipuri:- ${i++}`);
+            document.write("<br>");
+        }
+    }
+    setInterval(() => {
+        panipuri();
+    }, 1000);
+
+    let j = 0;
+
+    let burger = () => {
+        if (j <= 5) {
+            document.write(`burger:- ${j++}`);
+            document.write("<br>");
+        }
+    }
+
+    setInterval(() => {
+        burger();
+    }, 2000);
+
+    let k = 0;
+
+    let pizza = () => {
+        if (k <= 2) {
+            document.write(`pizza:- ${k++}`);
+            document.write("<br>");
+        }
+    }
+    setInterval(() => {
+        pizza();
+    }, 3000);
+
+</script>
