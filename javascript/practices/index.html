@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Crud Operation</h1>
+    <div align="center">
+        <input type="hidden" id="Search">
+    </div>
+    <table align="center">
+        <tr>
+            <td>Enter Name:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Enter Email:</td>
+            <td><input type="text" id="email"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="AddRecord()" value="Add" id="add">
+                <input type="button" onclick="UpdateRecord()" value="Edit" id="edit">
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </thead>
+        <tbody id="ViewRecord">
+
+        </tbody>
+    </table>
+    <script src="index.js">
+
+    </script>
+</body>
+
+</html>

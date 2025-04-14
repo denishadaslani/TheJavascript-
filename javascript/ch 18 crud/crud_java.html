@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud operation java</title>
+</head>
+
+<body>
+    <h1 align="center">crud operation</h1>
+    <div align="center">
+        <input type="hidden" id="search">
+    </div>
+    <table align="center">
+        <tr>
+            <td>Enter Name:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Enter Phone:</td>
+            <td><input type="text" id="phone"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="add" onclick="addRecord()" value="Add">
+                <input type="button" id="edit" onclick="updateRecord()" value="Edit">
+            </td>
+
+
+    </table>
+    <br><br>
+    <table align="center" border="1" cellpadding="10">
+        <thead>
+            <th>Id</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>Action</th>
+        </thead>
+
+        <tbody id="viewRecord">
+
+        </tbody>
+
+    </table>
+    <script src="crud_java.js">
+
+    </script>
+</body>
+
+</html>

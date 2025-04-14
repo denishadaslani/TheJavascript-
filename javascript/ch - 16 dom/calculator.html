@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+
+<body>
+    <div id="root">
+        <table align="center">
+            <tr>
+                <td>
+                    <input disabled type="text" id="calc">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="1" onclick="calc.value += '1'">
+                    <input type="button" value="2" onclick="calc.value += '2'">
+                    <input type="button" value="3" onclick="calc.value += '3'">
+                    <input type="button" value="+" onclick="calc.value += '+'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="4" onclick="calc.value += '4'">
+                    <input type="button" value="5" onclick="calc.value += '5'">
+                    <input type="button" value="6" onclick="calc.value += '6'">
+                    <input type="button" value="-" onclick="calc.value += '-'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="7" onclick="calc.value += '7'">
+                    <input type="button" value="8" onclick="calc.value += '8'">
+                    <input type="button" value="9" onclick="calc.value += '9'">
+                    <input type="button" value="*" onclick="calc.value += '*'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="/" onclick="calc.value += '/'">
+                    <input type="button" value="0" onclick="calc.value += '0'">
+                    <input type="button" value="=" onclick="calc.value = eval(calc.value)">
+                    <input type="button" value="clear" onclick="calc.value= ''">
+                    <input type="button" value="<=" onclick="calc.value = calc.value.slice(0,-1)">
+                </td>
+
+
+
+
+
+        </table>
+    </div>
+</body>
+
+</html>

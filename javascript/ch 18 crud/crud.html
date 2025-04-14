@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+</head>
+
+<body>
+    <h1 align="center">crud</h1>
+    <input type="hidden" id="search">
+    <table align="center">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="tel" id="phone"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="button" onclick="addRecord()" id="add" value="Add">
+                <input type="button" onclick="updateRecord()" id="edit" value="Edit">
+            </td>
+        </tr>
+    </table>
+    <br>
+
+
+
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>ACTION</th>
+
+        </thead>
+        <tbody id="viewRecord">
+
+        </tbody>
+    </table>
+    <script src="crud.js">
+
+    </script>
+</body>
+
+</html>

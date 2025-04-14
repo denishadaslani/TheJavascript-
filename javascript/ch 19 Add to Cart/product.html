@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+
+  <title>Add to cart</title>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container">
+        <a class="navbar-brand" href="#">Add To Cart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="cart.html">Cart</a> -->
+              <a onclick="logoutUser()" type="button" class="btn btn-danger me-2 position-relative">
+                Logout
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+              </a>
+              <a href="cart.html" type="button" class="btn btn-primary position-relative">
+                Carts
+                <span id="cart"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+              </a>
+            </li>
+
+            <!-- <span class="visually-hidden">unread messages</span> -->
+            </span>
+            </button>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1 align="center">Discover the Best Food</h1>
+  <div>
+    <div class="container">
+      <div class="row" id="product">
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"> </script>
+  <script src="product.js"></script>
+  <script src="wachmen.js"></script>
+  <script>
+
+
+    const productdata = () => {
+
+      let allcarts = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart').innerHTML = allcarts.length;
+      let tbl = '';
+
+      product.map((val, index) => {
+
+        const { id, name, price, qty, image } = val;
+        tbl += `
+          <div class="col-md-3">
+                    <div class="card mb-3">
+                        <img src="${image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${name}</h5>
+                          
+                          <h6>Rs.${price}</h6>
+
+                          <a href="#" onclick="addCart(${id})" class="btn btn-primary">Add</a>
+                        </div>
+                      </div>
+             </div>
+
+           `
+      })
+      document.getElementById("product").innerHTML = tbl
+
+    }
+    productdata();
+
+
+    let AllCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    const addCart = (id) => {
+      let dup = AllCart.find(val => val.id == id); {
+        if (dup) {
+          alert("already add to cart");
+          return false;
+        }
+      }
+      product.map((val) => {
+        if (val.id == id) {
+          AllCart.push(val);
+          localStorage.setItem("cart", JSON.stringify(AllCart));
+          alert("add to cart successfully");
+
+        }
+        productdata();
+      })
+    }
+    const logoutUser = () => {
+      localStorage.removeItem('user');
+      alert("Logout successfully");
+      window.location.href = "index.html";
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chess board</title>
+    <style>
+        .black {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+
+        .white {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align = "center">chess board</h1>
+    <div id="root">
+        <table id="chess" border="1">
+
+        </table>
+    </div>
+    <script>
+        let chess = document.getElementById('chess');
+
+
+
+        for (let i = 0; i < 8; i++) {
+            let tr = document.createElement('tr');
+            for (let j = 0; j < 8; j++) {
+                let td = document.createElement('td');
+                if (i % 2 == 0) {
+                    if (j % 2 == 0) {
+                        td.setAttribute('class', 'white');
+                    }
+                    else {
+                        td.setAttribute('class', 'black');
+                    }
+                }
+                else {
+                    if (j % 2 == 0) {
+                        td.setAttribute('class', 'black');
+                    }
+                    else {
+                        td.setAttribute('class', 'white');
+                    }
+                }
+
+                tr.appendChild(td);
+            }
+            chess.appendChild(tr);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

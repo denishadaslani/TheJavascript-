@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <h1 align="center">crud operation</h1>
+    <table align="center">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td><input type="tel:" id="phone"></td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td>
+                <input type="radio" name="gender" value="male" id="male">male
+                <input type="radio" name="gender" value="female" id="female">female
+            </td>
+        </tr>
+        <tr>
+            <td>city</td>
+            <td>
+                <select id="city">
+                    <option value="0">Select city:</option>
+                    <option value="surat">surat</option>
+                    <option value="vadodara">Vadodara</option>
+                    <option value="vapi">Vapi</option>
+                    <option value="rajkot">rajkot</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>language</td>
+            <td>
+                <input type="checkbox" name="language" id="language" value="html">html
+                <input type="checkbox" name="language" id="language" value="css">css
+                <input type="checkbox" name="language" id="language" value="js">js
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="addRecord()" id="add" value="Add">
+                <input type="button" onclick="editRecord()" id="edit" value="Edit">
+            </td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+
+    <table align="center" border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>phone</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>language</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="viewRecord">
+
+        </tbody>
+
+    </table>
+
+    <script src="crud.js"></script>
+</body>
+
+</html>

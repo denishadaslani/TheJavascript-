@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloom Boutique</title>
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero {
+            background: url('assets/img/bannerimg.png') center center/cover no-repeat;
+            height: 90vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .flower-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            z-index: 999;
+        }
+
+        .btn:hover {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm position-sticky top-0">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🪻 Bloom Boutique </a>
+            <span id="useremail">Email:-</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+
+
+
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                    <li class="nav-item"> </li>
+
+                    <button type="button" class="border-0 position-relative">
+                        <a class="nav-link" href="cart.html"><i style="color: blueviolet;font-size: 30px;"
+                                class="fa-solid fa-cart-shopping"></i></a>
+                        <span id="count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill "
+                            style="background-color: blueviolet; color: white;">
+                            0
+                        </span>
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Fresh Flowers Delivered Daily</h1>
+            <p>Brighten someone's day with a beautiful bouquet</p>
+            <a href="#" class="btn btn-light btn-lg mt-3">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Flowers -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Featured Flowers</h2>
+            <div class="row" id="product">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bloom Boutique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="product.js">
+
+    </script>
+    <script src="watchmen.js"></script>
+
+    <script>
+        const getproduct = () => {
+            let carts = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('count').innerHTML = carts.length;
+
+            let login_User = JSON.parse(localStorage.getItem('login_user')) || [];
+            document.getElementById('useremail').innerHTML = login_User.email;
+            let tbl = "";
+
+            product.map((val, index) => {
+
+                const { id, name, price, image, qty } = val;
+                tbl += `
+            <div class="col-md-4 p-3 ">
+                    <div class="card flower-card shadow-sm py-3">
+                        <img src="${image}" class="card-img-top"
+                            alt="Rose">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${name}</h5>
+                            <p class="card-text">$${price}</p>
+                            <button href="#" onclick="addcart(${id})"  class="btn"  style="border: 1px solid blueviolet";>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `
+                document.getElementById('product').innerHTML = tbl;
+
+
+            })
+        }
+        getproduct();
+        let carts = JSON.parse(localStorage.getItem('cart')) || [];
+        const addcart = (id) => {
+
+            let dup = carts.find(val => val.id == id);
+
+            if (dup) {
+                alert('Product already added to cart');
+                return false;
+            }
+
+            product.map((val, index) => {
+                if (val.id == id) {
+                    carts.push(val);
+                    localStorage.setItem('cart', JSON.stringify(carts));
+                    alert('Product added to cart');
+                }
+            })
+            getproduct();
+        }
+
+        const logout = () => {
+            localStorage.removeItem('login_user');
+            alert('Logout Successfully');
+            window.location.href = 'index.html';
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
