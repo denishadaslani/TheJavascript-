@@ -1,5 +1,5 @@
-const user = JSON.parse(localStorage.getItem('login_user')) || [];
+const user = JSON.parse(localStorage.getItem('login_user'));
 
 if (!user) {
-    window.location.href('index.html');
+    window.location.href = "index.html";
 }

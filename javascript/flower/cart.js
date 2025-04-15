@@ -65,7 +65,6 @@ const updatecart = (id) => {
 const remove = () => {
 
     localStorage.setItem('cart', JSON.stringify([]));
-    // localStorage.setItem('cart', JSON.stringify()) || [];
     alert('Checkout Successfully');
     getcarts();
 }

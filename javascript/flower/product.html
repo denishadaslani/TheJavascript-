@@ -114,17 +114,17 @@
     </footer>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="watchmen.js"></script>
     <script src="product.js">
 
     </script>
-    <script src="watchmen.js"></script>
 
     <script>
         const getproduct = () => {
             let carts = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('count').innerHTML = carts.length;
 
-            let login_User = JSON.parse(localStorage.getItem('login_user')) || [];
+            let login_User = JSON.parse(localStorage.getItem('login_user'));
             document.getElementById('useremail').innerHTML = login_User.email;
             let tbl = "";
 
@@ -138,7 +138,7 @@
                             alt="Rose">
                         <div class="card-body text-center">
                             <h5 class="card-title">${name}</h5>
-                            <p class="card-text">$${price}</p>
+                            <p class="card-text">Rs.${price}</p>
                             <button href="#" onclick="addcart(${id})"  class="btn"  style="border: 1px solid blueviolet";>Add to Cart</button>
                         </div>
                     </div>
