@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+    <div align="center">
+        <table border="1" align="center">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="user">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+    </script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "https://dummyjson.com/products",
+            success: function (res) {
+                let data = res.products;
+                
+                let tbl = "";
+                data.map((val) => {
+                    tbl += `<tr>
+                    <td>${val.id}</td>
+                    <td>${val.title}</td>
+                    </tr>`
+                })
+                document.getElementById('user').innerHTML = tbl;
+            }
+        })
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

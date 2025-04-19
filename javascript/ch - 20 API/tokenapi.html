@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feach</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>Token API</h1>
+        <table align="center" border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Paassword:</td>
+                    <td><input type="text" id="pass"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" onclick="loginUser()"></td>
+                </tr>
+            </thead>
+            <tbody id="user">
+
+            </tbody>
+
+        </table>
+    </div>
+    <script>
+        const loginUser = () => {
+            let name = document.getElementById('name').value;
+            let password = document.getElementById('pass').value;
+
+            fetch('https://dummyjson.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: name,
+                    password: password
+                })
+            })
+                .then(res => res.json())
+                .then((data) => {
+                    let token = {
+                        accessToken: data.accessToken
+                    }
+                    localStorage.setItem('token', JSON.stringify(token));
+                    alert('Login Successfully');
+                    // console.log(data);
+                    window.location.href = 'dashboard.html';
+                })
+        }
+    </script>
+</body>
+
+</html>

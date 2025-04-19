@@ -1,52 +1,48 @@
 const allrecord = () => {
     return JSON.parse(localStorage.getItem('ok')) || [];
 }
-const addRecord = () => {
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
+
+const AddRecord = () => {
+    let name = document.getElementById('name').value;
+    let price = document.getElementById('price').value;
 
     let row = {
-        id: Math.floor(Math.random() * 10),
+        id: Math.floor(Math.random() * 100),
         name: name,
-        phone: phone
+        price: price
     }
-    let data = [...allrecord(), row];
-    localStorage.setItem("ok", JSON.stringify(data));
-    document.getElementById("name").value = '';
-    document.getElementById("phone").value = '';
+    let old = [...allrecord(), row];
+    localStorage.setItem('ok', JSON.stringify(old));
+    alert("Record ADD sucessfully")
+    document.getElementById('name').value = '';
+    document.getElementById('price').value = '';
     viewRecord();
 }
 
 const viewRecord = () => {
     let tbl = "";
-
-    document.getElementById('edit').style.display = 'none';
-    document.getElementById('add').style.display = 'block';
-    allrecord().map((val, index) => {
+    document.getElementById('Edit').style.display = 'none';
+    document.getElementById('Add').style.display = 'block';
+    allrecord().map((val) => {
         tbl += `
             <tr>
                 <td>${val.id}</td>
                 <td>${val.name}</td>
-                <td>${val.phone}</td>
+                <td>${val.price}</td>
                 <td>
                 <button onclick="deleteRecord(${val.id})">Delete</button>
                 <button onclick="editRecord(${val.id})">Edit</button>
-                    
                 </td>
 
             </tr>
-
+            
         `
-
     })
-    document.getElementById("viewRecord").innerHTML = tbl;
-
-
+    document.getElementById('viewRecord').innerHTML = tbl;
 }
 viewRecord();
 
 const deleteRecord = (id) => {
-
     let data = allrecord();
 
     let del = data.filter((val) => {
@@ -55,41 +51,42 @@ const deleteRecord = (id) => {
         }
     })
     localStorage.setItem("ok", JSON.stringify(del));
+    alert("record delete sucessfully")
     viewRecord();
 }
 
 const editRecord = (id) => {
-    document.getElementById('edit').style.display = 'block';
-    document.getElementById('add').style.display = 'none';
+    document.getElementById('Edit').style.display = 'block';
+    document.getElementById('Add').style.display = 'none';
 
 
     let name = document.getElementById('name').value;
-    let phone = document.getElementById('phone').value;
+    let price = document.getElementById('price').value;
 
     let data = allrecord();
     let up = data.find((val) => {
         if (val.id == id) {
             name = name;
-            phone = phone;
+            price = price;
             return val;
         }
     })
 
     document.getElementById('name').value = up.name;
-    document.getElementById('phone').value = up.phone;
+    document.getElementById('price').value = up.price;
     document.getElementById('search').value = up.id;
 }
 
-const updateRecord = () => {
+const UpdateRecord = () => {
     let name = document.getElementById('name').value;
-    let phone = document.getElementById('phone').value;
+    let price = document.getElementById('price').value;
     let id = document.getElementById('search').value;
 
     let data = allrecord();
     let up = data.find((val) => {
         if (val.id == id) {
             val.name = name;
-            val.phone = phone;
+            val.price = price;
             return val;
         }
     })
@@ -97,8 +94,7 @@ const updateRecord = () => {
     localStorage.setItem("ok", JSON.stringify(data));
     alert('updated');
     document.getElementById('name').value = '';
-    document.getElementById('phone').value = '';
+    document.getElementById('price').value = '';
     document.getElementById('search').value = '';
     viewRecord();
-
 }

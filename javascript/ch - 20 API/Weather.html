@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Night Weather UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
+
+        .weather-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .weather-box h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .form-control,
+        .btn {
+            border-radius: 25px;
+        }
+
+        .btn-light {
+            background-color: #ffffff22;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-light:hover {
+            background-color: #ffffff44;
+        }
+
+        .weather-icon {
+            width: 100px;
+            margin: 20px 0;
+        }
+
+        .temp {
+            font-size: 48px;
+            font-weight: bold;
+            color: #f8f9fa;
+        }
+
+        .description {
+            font-size: 20px;
+            opacity: 0.85;
+        }
+
+        .moon-bg {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 120px;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Optional Moon Decoration -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/600px-FullMoon2010.jpg"
+        alt="moon" class="moon-bg rounded-circle">
+
+    <div class="weather-box">
+        <h2>🌙 Night Weather</h2>
+        <div class="input-group mb-4">
+            <input id="city" type="text" class="form-control form-control-lg" placeholder="Enter city" />
+            <button class="btn btn-light btn-lg ms-2 " type="button" onclick="searchCity()">Search</button>
+        </div>
+
+        <!-- Static weather data -->
+        <img src="https://openweathermap.org/img/wn/01n.png" alt="weather icon" class="weather-icon" />
+        <div id="temp"></div>
+        <div id="description"></div>
+        <div id="mt-3"></div>
+    </div>
+    <script>
+
+
+        const searchCity = () => {
+            const city = document.getElementById('city').value;
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=14951c93f3d11e8ac8bed96dd90e8bc7&units=metric`)
+                .then((res) => res.json())
+                .then((data) => {
+
+                    document.querySelector('.weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+                    document.getElementById('temp').innerHTML = `${data.main.temp}°C`;
+                    document.getElementById('description').innerHTML = data.weather[0].description;
+                    document.getElementById('mt-3').innerHTML = `📍 ${data.name}, ${data.sys.country}`;
+                    const input = document.getElementById('city');
+                    input.value = '';
+                    input.focus();
+                })
+        };
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>budget App</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>budget App</h1>
+        <input type="hidden" id="search">
+        <!-- <table border="0" >
+            
+            <thead>
+                <tr>
+                    <td>budget</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name" placeholder="movie"></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <input type="button"  id="Add" value="Set budget">
+                    </td>
+                </tr>
+            </thead>
+
+        </table> -->
+
+        <table border="0" >
+            
+            <thead>
+                <tr>
+                    <td>expense</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name" placeholder="movie"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="price" placeholder="price"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" onclick="AddRecord()"  id="Add" value="Check Amount">
+                        <input type="button" onclick="UpdateRecord()" id="Edit" value="Edit">
+                    </td>
+                </tr>
+            </thead>
+
+        </table>
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Expense list</th>
+                    <th>expense</th>
+                    <th>balance</th>
+                </tr>
+
+            </thead>
+            <tbody id="viewRecord">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="crud.js">
+
+    </script>
+</body>
+
+</html>
