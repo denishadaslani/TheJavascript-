@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter UI Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f8fa;
+        }
+
+        .tweet-box textarea {
+            resize: none;
+        }
+
+        .tweet-card {
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tweet-card:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Twitter</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+
+        <!-- Tweet Box -->
+        <div class="tweet-box p-3 bg-white shadow-sm rounded mb-4">
+            <div class="d-flex mb-2">
+                <!-- <img src="https://via.placeholder.com/50" class="rounded-circle me-2" alt="User"> -->
+                <textarea class="form-control" rows="3" id="user" placeholder="What's happening?"></textarea>
+            </div>
+            <div class="text-end">
+                <button class="btn btn-primary rounded-pill px-4" onclick="search()">Tweet</button>
+            </div>
+        </div>
+
+        <!-- Tweet Card -->
+        <div class="tweet-card">
+            <div class="d-flex">
+                <!-- <img src="https://via.placeholder.com/50" class="rounded-circle me-3" alt="User"> -->
+                <div>
+                    <h6 class="mb-1">John Doe <small class="text-muted " id="username"></small></h6>
+                    <!-- @johndoe · 1h -->
+                    <!-- <p class="mb-1">Just building a Twitter UI using Bootstrap 5!</p> -->
+                    <!-- <div>
+                        <span class="me-3"><i class="bi bi-chat"></i> 10</span>
+                        <span class="me-3"><i class="bi bi-repeat"></i> 5</span>
+                        <span><i class="bi bi-heart"></i> 23</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Another Tweet Card -->
+        <!-- <div class="tweet-card">
+      <div class="d-flex">
+        <img src="https://via.placeholder.com/50" class="rounded-circle me-3" alt="User">
+        <div>
+          <h6 class="mb-1">Jane Smith <small class="text-muted">@janesmith · 3h</small></h6>
+          <p class="mb-1">Bootstrap makes UI design really fast and clean. 🚀</p>
+          <div>
+            <span class="me-3"><i class="bi bi-chat"></i> 2</span>
+            <span class="me-3"><i class="bi bi-repeat"></i> 3</span>
+            <span><i class="bi bi-heart"></i> 14</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <script>
+            const search = () => {
+                let user = document.getElementById('user').value;
+                let name = document.getElementById('username').value
+
+                fetch(`https://api.twitter.com/2/openapi.json`, {
+                    method: 'GET',
+                    redirect: 'follow'
+                })
+                    .then(res => res.json())
+                    .then((result) => {
+
+                        console.log(result);
+                    })
+            }
+        </script>
+</body>
+
+</html>

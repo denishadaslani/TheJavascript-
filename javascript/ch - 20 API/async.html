@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        // console.log("hello");
+        // const data = async () => {
+        //     let res = await fetch(`https://dummyjson.com/test`, {
+        //         method: "GET",
+        //     })
+        //     let user = await res.json();
+        //     console.log(user);
+
+        // }
+        // data();
+
+        // console.log("hello denisha")
+
+        console.log("Fetching user data...");
+        try {
+            const data = async () => {
+                let res = await fetch(`https://dummyjson.com/test`, {
+                    method: "GET",
+                })
+                let user = await res.json();
+                console.log(user);
+
+            }
+            data();
+        } catch (err) {
+            console.error("An error occurred:", err);
+        }
+
+        console.log("hello denisha");   
+
+    </script>
+
+
+
+</body>
+
+</html>
