@@ -140,6 +140,7 @@
                             <h5 class="card-title">${name}</h5>
                             <p class="card-text">Rs.${price}</p>
                             <button href="#" onclick="addcart(${id})"  class="btn"  style="border: 1px solid blueviolet";>Add to Cart</button>
+                            <button href="#" onclick="adddetails(${id})"  class="btn"  style="border: 1px solid blueviolet";>Details</button>
                         </div>
                     </div>
                 </div>
@@ -168,6 +169,17 @@
                 }
             })
             getproduct();
+        }
+
+        const adddetails = (id) => {
+
+            product.map((val, index) => {
+                if (val.id == id) {
+                    return val;
+                }
+                localStorage.setItem('details', JSON.stringify(val));
+                window.location.href = 'details.html';
+            })
         }
 
         const logout = () => {
